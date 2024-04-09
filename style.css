@@ -1,0 +1,25 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#card {
+  border: solid 1px white;
+  border-radius: 5%;
+  width: 200px;
+  height: 300px;
+}
+body {
+  background-color: rgb(37, 37, 37);
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+  font-style: italic;
+  padding-bottom: 3%;
+}
