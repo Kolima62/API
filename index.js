@@ -23,17 +23,27 @@ fetchData({
     // .filter((game) => game.rating > 4.6) (ligne pour activer un filtre)
     .map((game) => {
       console.log(game);
+
       const card = document.createElement("div");
       card.setAttribute("id", "card");
+
       const titreCard = document.createElement("h2");
       titreCard.innerText = game.name;
-      const image = document.createElement("div");
-      image.style.background = `url(${game.background_image}) no-repeat center center / cover`;
-      image.setAttribute(`class`, `card`);
+
+      // const image = document.createElement("div");
+      // image.style.background = `url(${game.background_image}) no-repeat center center / cover`;
+      // image.setAttribute(`class`, `card`);
+
       const note = document.createElement("p");
       note.innerText = game.rating;
+
       const date = document.createElement("p");
       date.innerText = game.released;
+
+      const img = document.createElement("img");
+      img.setAttribute("src", game.background_image);
+      img.style.width = "100%";
+
       const content = document.createElement("div");
       game.platforms.map((platform) => {
         const span = document.createElement("span");
@@ -41,7 +51,7 @@ fetchData({
         content.append(span);
       });
 
-      card.append(titreCard, date, image, note);
+      card.append(titreCard, date, img, note);
       main.append(card);
     });
 });
